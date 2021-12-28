@@ -21,3 +21,52 @@ int main()
     }while(s != 0 || x != 0 || y != 0);
     return 0;
 }
+
+void updateImage(bool paper[N][M],int big ,int px,int py)
+{
+
+    for (int i = 0; i < N; i++)
+    {
+        
+        for(int j =0 ;j < M ;j++)
+        {
+            if(sqrt((pow((i-px),2)+pow((j-py),2)))<=big-1)
+            {
+                paper[i][j]=1;
+            }
+           
+
+
+        }
+        
+    }
+
+}
+
+
+void showImage(const bool paper[N][M])
+{
+    cout<<"------------------------------------------------------------------------"<<endl;
+    for (int i = 0; i < N; i++)
+    {
+        cout<<"|";
+        for(int j =0 ;j < M ;j++)
+        {
+            if(paper[i][j])
+            {
+                cout<<"*";
+            }
+            else 
+            {
+                cout<<" ";
+            }
+
+
+
+        }
+        cout<<"|\n";
+    }
+    
+
+    cout<<"------------------------------------------------------------------------"<<endl;
+}
